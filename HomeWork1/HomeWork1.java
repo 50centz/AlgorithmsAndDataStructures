@@ -1,6 +1,7 @@
 package HomeWork.HomeWork1;
 
 import java.util.Random;
+import java.util.Arrays;
 import java.util.Date;
 
 public class HomeWork1 {
@@ -11,9 +12,8 @@ public class HomeWork1 {
 
     public static void main(String[] args) {
         Random rand = new Random();
-        int n = rand.nextInt(1, 1001);
+        int n = rand.nextInt(1, 5);
         int[] array = new int[n + 1];
-
         result(array);    
     }
 
@@ -26,7 +26,7 @@ public class HomeWork1 {
         for (int i = 1; i < array.length; i++)
         {
             array[i] = rand.nextInt(1, 1000001);
-            for (int j = 1; j * 2 <= array[i]; j++){
+            for (int j = 1; j <= array[i]; j++){
                 if(array[i] % j == 0){
                     System.out.printf("%d%n ", j);
                 }
@@ -37,7 +37,8 @@ public class HomeWork1 {
 
         long time = stop.getTime() - start.getTime();
         System.out.println();
-        System.out.printf("Time: %d", time);
+        System.out.printf("Time: %d%n", time);
+        System.out.print(Arrays.toString(array));
     }
 }
 
